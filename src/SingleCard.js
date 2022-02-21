@@ -4,7 +4,7 @@ import "./SingleCard.css"
 const SingleCard = ({card, handleChoice, flipped, disabled})=>{
     const handleClick = ()=>{
         if (!disabled){
-        {handleChoice(card)}
+        handleChoice(card)
     }}
     return(
     <div className="SingleCard">
