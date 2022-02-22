@@ -73,9 +73,9 @@ const cardImages= [
 
 return (
     <div className="Game">
-     <h1>Magic Match</h1>
+     <h1 className="title">Magic Match</h1>
     
-     <button onClick={shuffleCards}>New Game</button>
+     <button onClick={shuffleCards}>New Game🪄</button>
      <div className="card-grid">
          {cards.map(card=>(
              <SingleCard 
@@ -88,7 +88,7 @@ return (
      </div>
      
      
-     <div>{turns}</div>
+     <p className="turns">Turns: {turns}</p>
    
     </div>
 )
