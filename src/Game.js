@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Game.css";
 import SingleCard from "./SingleCard";
 
@@ -21,17 +21,25 @@ const cardImages= [
     const [choiceOne, setChoiceOne]=useState(null);
     const [choiceTwo, setChoiceTwo]=useState(null);
     const [disabled, setDisabled]= useState(false)
+    const tempQuery = useRef();
 
+    //start game automatically
+    useEffect(()=>{
+        tempQuery.current();
+    }, []) 
     //shuffle cards
     const shuffleCards= ()=>{
         const shuffledCards=[...cardImages,...cardImages]
             .sort(() => Math.random()- 0.5)
-            .map((card)=>({...card, id:Math.random()}))           
+            .map((card)=>({...card, id:Math.random()}));
 
+        
+        setChoiceOne();
+        setChoiceTwo();
         setCards(shuffledCards)
         setTurns(0)
         }
-        
+        tempQuery.current = shuffleCards;
     //compare 2 selected cards
     useEffect(()=>{
         
