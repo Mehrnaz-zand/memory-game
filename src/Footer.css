@@ -1,0 +1,22 @@
+.Footer {
+  color: white;
+  font-size: 0.4em;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+a {
+  color: rgb(202, 159, 202);
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+  color: rgb(221, 195, 221);
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    font-size: 0.4em;
+    max-width: 100%;
+  }
+}
